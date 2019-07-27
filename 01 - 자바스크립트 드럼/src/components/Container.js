@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Drum from './Drum';
-
+import './Container.css'
 
 class Container extends Component{
     constructor(props){
@@ -11,7 +11,7 @@ class Container extends Component{
      * Container 초기화
      */
     init = () =>{
-        window.addEventListener('keydown',this.keyDownEventAdd)
+        window.addEventListener('keydown',this.keyDownEventAdd);
         
     }
     /**
@@ -20,6 +20,9 @@ class Container extends Component{
     keyDownEventAdd = (e) =>{
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         if(!audio) return;
+        const drum = audio.parentNode;
+        drum.classList.add('playing')
+        
         audio.currentTime = 0;
         audio.play();
     }
@@ -48,7 +51,7 @@ class Container extends Component{
            )
         }
         return (
-            <div>
+            <div className="keys">
                 {DrumsEvent()}
             </div>
         )

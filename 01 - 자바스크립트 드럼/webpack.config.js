@@ -5,7 +5,7 @@ module.exports = {
     mode: "development", //실서비스 production
     devtool : "eval",   //빠르게하겠다 개발땐 hidden-source-map
     resolve: {
-        extensions: ['.js']
+        extensions: ['.js', "css"]
     },
     entry:{
         app: ['./src/Main']
@@ -22,6 +22,15 @@ module.exports = {
                     'react-hot-loader/babel'
                 ]
             }
+        },{
+          test: /\.css$/,
+          loader: 'style-loader!css-loader'
+        },{
+          test: /\.scss$/,
+          loaders: ["style", "css", "sass"]
+        },{
+          test: /\.json$/,
+          loader: 'json' 
         }]
     },
     
