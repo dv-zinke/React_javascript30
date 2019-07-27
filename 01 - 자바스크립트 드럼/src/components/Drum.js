@@ -7,8 +7,11 @@ class Drum extends Component {
         this.init();
         this.drum = React.createRef();
     }
+    /**
+     * 렌더링이 완료되는시점
+     */
     componentDidMount() {
-        this.transitionEndEvent();
+        this.drumaddEvent();
     }
     /**
      * drum 초기화
@@ -17,15 +20,17 @@ class Drum extends Component {
         
     }
     /**
-     * transitionEndEvent
+     * 드럼한테 이벤트추가
      */
-    transitionEndEvent = ()=>{
+    drumaddEvent = ()=>{
         const drum = this.drum.current;
-        console.log(drum)
-        drum.addEventListener('transitionend', this.removeTransition);
-       //drum.addEventListener('transitionend', removeTransition);
+        drum.addEventListener('transitionend', this.removeTransitionEvent);
+       
     }
-    removeTransition = (e) =>{
+    /**
+     * TransitionEnd 이벤트가 왔을때 propertyName이 transform 이면 현재타겟에 클래스 playing 지운다
+     */
+    removeTransitionEvent = (e) =>{
         if (e.propertyName !== 'transform') return;
         e.target.classList.remove('playing');
     }
