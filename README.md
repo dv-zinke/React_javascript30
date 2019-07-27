@@ -7,7 +7,9 @@
 # DEMO Link
 
 1. JavaScript 드럼 
-[[Link]](http://heejune.kr/react_project/javascript30/1/)
+
+[[Link]](http://heejune.kr/react_project/javascript30/1/) 
+(키보드 A,S,D,F,G,H,J,K,L 누를시 소리가남) 
 
 
 
@@ -25,4 +27,5 @@ Ref의 바람직한 사용 사례는 다음과같다고했다.
 * 포커스, 텍스트 선택영역, 혹은 미디어의 재생을 관리할 때.
 * 애니메이션을 직접적으로 실행시킬 때.
 * 서드 파티 DOM 라이브러리를 React와 같이 사용할 때.
+
  애니메이션을 직접적으로 실행될때 부분인거같아서 사용을했다.
